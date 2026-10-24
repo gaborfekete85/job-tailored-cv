@@ -202,7 +202,7 @@ async def fetch_job_page(url: str) -> str:
     if response.status_code != 200:
         raise ValueError(
             f"The site refused the request (HTTP {response.status_code}) — it probably blocks "
-            "automated access. Use 'Paste text' to add the job description instead."
+            "automated access. Use 'Paste Job description' to add the job description instead."
         )
 
     soup = BeautifulSoup(response.text, "html.parser")

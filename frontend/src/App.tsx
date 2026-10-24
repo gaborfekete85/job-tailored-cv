@@ -245,7 +245,7 @@ export default function App() {
             aria-label="Job ad URL"
           />
           <button type="button" className="secondary" onClick={() => setShowPaste(!showPaste)}>
-            {showPaste ? 'Hide text' : 'Paste text'}
+            {showPaste ? 'Hide text' : 'Paste Job description'}
           </button>
           <button className="primary" disabled={submitting || (!url.trim() && !pasted.trim())}>
             {submitting ? 'Starting…' : 'Analyze'}
