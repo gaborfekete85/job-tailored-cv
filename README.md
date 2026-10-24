@@ -27,6 +27,12 @@ Or a single process: `cd frontend && bun run build`, then `uv run uvicorn api:ap
 uv run graph.py jobs/Job-Rapidata.md
 ```
 
+## Tests
+
+```bash
+uv run pytest
+```
+
 ## Data
 
 | Where | What |

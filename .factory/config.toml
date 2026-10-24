@@ -1,0 +1,37 @@
+# Factory config for job-tailored-cv.
+#
+#   factory "<task>" --stage=build --attempts=3      # edit this checkout in place
+#   scripts/issue-to-pr.sh 1                        # GitHub issue -> worktree -> PR
+#   factory "Which issues are quick wins?" --stage=triage   # read-only report
+
+# Ad-hoc tasks, run directly in this checkout.
+[stages.build]
+prompt = "BUILD.md"
+checks = ["test", "frontend", "review"]
+
+# One GitHub issue, built in its own worktree on branch factory/<run_id>.
+# Worktrees start from HEAD: commit anything the checks rely on first.
+[stages.issue]
+prompt = "ISSUE.md"
+pre = [
+  "git worktree add -b factory/$FACTORY_RUN_ID \"$FACTORY_WORKSPACE\" HEAD",
+  "cd \"$FACTORY_WORKSPACE/frontend\" && bun install --frozen-lockfile",
+]
+cwd = ".worktrees/{run_id}"
+checks = ["test", "frontend", "review"]
+
+[stages.triage]
+prompt = "TRIAGE.md"
+pre = ["gh auth status"]
+tools = ["Read", "Glob", "Grep", "Bash"]
+
+# Exit 0 passes, 1 retries with the output, anything else stops.
+[checks.test]
+command = "uv run pytest"
+
+# Lint + type-check + build. Missing bun stops (exit 3) instead of retrying.
+[checks.frontend]
+command = "command -v bun >/dev/null || exit 3; cd frontend && bun run lint && bun run build || exit 1"
+
+[checks.review]
+prompt = "REVIEW.md"

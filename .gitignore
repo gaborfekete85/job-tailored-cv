@@ -21,3 +21,7 @@ data/
 # Frontend build
 frontend/dist/
 frontend/node_modules/
+
+# Factory
+.factory/runs/
+.worktrees/
