@@ -1,0 +1,25 @@
+/* Plain style for reference templates that have no CSS of their own. */
+@page { size: A4; margin: 15mm 18mm; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff; color: #222; font-family: 'Carlito', Arial, sans-serif; font-size: 10.5pt; line-height: 1.4; }
+a { color: inherit; }
+.sep { margin: 0 1.5mm; color: #888; }
+
+.cv-head { display: flex; align-items: center; gap: 8mm; }
+.cv-codes { display: none; }
+.cv-who { flex: 1; }
+.cv-who h1 { margin: 0 0 1mm; font-size: 20pt; }
+.cv-line, .cv-links { font-size: 9.5pt; color: #555; }
+.cv-portrait img { width: 24mm; height: 24mm; object-fit: cover; border-radius: 2mm; display: block; }
+.cv-headline { font-size: 13pt; font-weight: 700; margin: 4mm 0; }
+
+section { margin-top: 4mm; }
+h2 { margin: 0 0 2mm; font-size: 12pt; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 0.75pt solid #222; }
+h3 { margin: 2mm 0 1mm; font-size: 10.5pt; }
+h2, h3 { break-after: avoid-page; }
+p { margin: 0 0 2mm; }
+ul { margin: 0 0 2mm; padding-left: 6mm; }
+li { margin-bottom: 0.8mm; break-inside: avoid-page; }
+.entry { margin-bottom: 3mm; }
+.entry-head { font-weight: 700; break-after: avoid-page; }
+.entry-meta { font-size: 9.5pt; color: #555; margin-bottom: 1mm; break-after: avoid-page; }

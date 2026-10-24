@@ -1,0 +1,38 @@
+/* Style of Gabor-Fekete-cv.pdf: navy headings, Carlito, QR left, portrait right. */
+@page { size: A4; margin: 12.7mm 15.9mm; }
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: #fff; color: #333;
+  font-family: 'Carlito', 'Calibri', 'Segoe UI', Arial, sans-serif; font-size: 10.5pt; line-height: 1.38;
+}
+a { color: #2e5496; }
+.sep { color: #595959; margin: 0 2mm; }
+
+.cv-head { display: flex; align-items: center; gap: 10mm; padding-bottom: 3mm; border-bottom: 1.25pt solid #1f3864; }
+.cv-codes, .cv-portrait { width: 27mm; flex: none; text-align: center; }
+.cv-codes img { width: 19mm; height: 19mm; display: block; margin: 0 auto; }
+.cv-codes .cap { font-size: 7.5pt; font-weight: 700; color: #1f3864; margin: 1mm 0 2mm; }
+.cv-portrait img { width: 27mm; height: 27mm; border-radius: 50%; object-fit: cover; display: block; }
+.cv-who { flex: 1; text-align: center; min-width: 0; }
+.cv-who h1 { margin: 0 0 1.5mm; font-size: 22pt; color: #1f3864; }
+.cv-links { font-size: 9.5pt; margin-bottom: 1.2mm; }
+.cv-line { font-size: 9pt; color: #595959; margin-top: 0.6mm; }
+.cv-headline { text-align: center; font-size: 15pt; font-weight: 700; color: #1f3864; margin: 3mm 0 4mm; }
+
+section { margin-top: 4.5mm; }
+h2 {
+  margin: 0 0 2mm; padding-bottom: 1mm; font-size: 13pt; color: #1f3864;
+  border-bottom: 0.75pt solid #bfbfbf;
+}
+h3 { margin: 2.5mm 0 1mm; font-size: 11pt; color: #222; }
+h2, h3 { break-after: avoid-page; }
+p { margin: 0 0 2.2mm; }
+ul { margin: 0 0 2mm; padding-left: 7mm; }
+li { margin-bottom: 1mm; font-size: 10pt; }
+
+.entry { margin-bottom: 3mm; }
+.entry-head { font-size: 12pt; font-weight: 700; font-style: italic; color: #222; margin-bottom: 0.8mm; break-after: avoid-page; }
+.entry-meta { font-size: 10pt; font-style: italic; margin-bottom: 1.2mm; break-after: avoid-page; }
+.entry-meta .period { color: #2e5496; }
+.entry-meta .customer { color: #595959; }
+li { break-inside: avoid-page; }
